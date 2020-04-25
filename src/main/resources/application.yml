@@ -1,0 +1,30 @@
+server:
+  port: 8088
+spring:
+  profiles:
+    active: dev
+  redis:
+    #数据库索引
+    database: 12
+    host: 62.234.215.223
+    port: 6379
+    #连接超时时间
+    timeout: 5000
+    password: renduv587666data
+
+
+
+task:
+  pool:
+    # 核心线程池大小
+    core-pool-size: 8
+    # 最大线程数
+    max-pool-size: 30
+    # 活跃时间
+    keep-alive-seconds: 30
+    # 队列容量
+    queue-capacity: 10
+
+cachename:
+  devicecache: deviceCache
+  elementcache: elementCache
