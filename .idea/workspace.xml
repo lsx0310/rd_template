@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0fe0a89-362e-4fe8-9075-babb3fa8ad9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoleInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserInfoMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rendu/model/Convert/BaseConvert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rendu/model/Convert/UserConvert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rendu/model/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MapStructTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rendu/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rendu/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rendu/config/Thread/ThreadPoolExecutorUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rendu/config/Thread/ThreadPoolExecutorUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rendu/entity/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rendu/entity/UserInfo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,19 +47,23 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/rendu/model" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.rendu.common.exception" />
+      <recent name="" />
+      <recent name="com.rendu.model" />
+      <recent name="com.rendu.mapper" />
+      <recent name="com.rendu.service.impl" />
+      <recent name="com.rendu.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspaces\Gitspace\rd_template\src\main\java\com\rendu\model" />
       <recent name="D:\workspaces\Gitspace\rd_template\src\main\resources\mapper" />
       <recent name="D:\workspaces\Gitspace\rd_template\src\main\resources" />
       <recent name="D:\workspaces\Gitspace\rd_template\src\main\java\com\rendu\utils" />
       <recent name="D:\workspaces\Gitspace\rd_template\src\main\java\com\rendu\config" />
-      <recent name="D:\workspaces\Gitspace\rd_template\src\main\java\com\rendu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -69,7 +78,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="MapStructTest.e2dTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rd_template" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MapStructTest" />
+      <option name="METHOD_NAME" value="e2dTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="rd_template" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.rendu.Application" />
@@ -77,6 +96,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MapStructTest.e2dTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SshConsoleOptionsProvider">
     <option name="myEncoding" value="UTF-8" />
@@ -91,7 +115,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587786309647</updated>
-      <workItem from="1587786310943" duration="2785000" />
+      <workItem from="1587786310943" duration="4206000" />
+      <workItem from="1587895490786" duration="823000" />
     </task>
     <servers />
   </component>
@@ -103,7 +128,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

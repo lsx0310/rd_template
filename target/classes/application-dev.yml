@@ -1,0 +1,74 @@
+spring:
+  datasource:
+    username: rendudata
+    password: 3alobx110vA#NasI
+    url: jdbc:mysql://IP:3306/具体的数据库?useUnicode=true&amp&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #始终执行初始化，再加载SQL语句执行时设置
+    initialization-mode: always
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=false;druid.stat.slowSqlMillis=500
+
+  #@JsonSerialize 注解配置
+  jackson:
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+
+#  redis:
+#    host: 192.168.163.128
+
+
+
+
+mybatis-plus:
+  # xml
+  mapper-locations: classpath:mapper/*Mapper.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.fengwenyi.mp3demo.model
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+#    lazy-loading-enabled: true
+
+##jwt配置
+audience:
+  # 代表这个JWT的接收对象,存入audience
+  clientId: 098f6bcd4621d373cade4e832627b4f6
+  # 密钥, 经过Base64加密, 可自行替换
+  base64Secret: MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=
+  # JWT的签发主体，存入issuer
+  name: restapiuser
+  # 过期时间，时间戳
+  expiresSecond: 7200000
+  # 在线用户key
+  onlineKey: online-token
+
+
+
+
+file:
+  path: 根据你的文件上传地址填写
+  maxSize: 100
+  codeType: UTF-8
+

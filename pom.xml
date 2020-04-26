@@ -62,7 +62,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
+            <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
         <!--引入redis缓存  开始-->
@@ -74,10 +74,6 @@
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
                     <groupId>org.slf4j</groupId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>spring-context-support</artifactId>
-                    <groupId>org.springframework</groupId>
                 </exclusion>
             </exclusions>
         </dependency>

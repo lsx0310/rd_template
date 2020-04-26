@@ -1,5 +1,7 @@
 package com.rendu.config;
 
+import com.alibaba.fastjson.parser.ParserConfig;
+import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,23 +34,21 @@ import java.util.Set;
 public class RedisConfig {
 
     @Bean
-    public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
-        RedisTemplate<String,Object> template = new RedisTemplate<>();
+    public RedisTemplate<Object,Object> redisTemplate(RedisConnectionFactory redisConnectionFactory){
+        RedisTemplate<Object,Object> template = new RedisTemplate<>();
         template.setConnectionFactory(redisConnectionFactory);
-
-        Jackson2JsonRedisSerializer jacksonSerial = new Jackson2JsonRedisSerializer(Object.class);
-        ObjectMapper om = new ObjectMapper();
-
-        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        jacksonSerial.setObjectMapper(om);
-
-        template.setValueSerializer(jacksonSerial);
+    
+        FastJsonRedisSerializer<Object> fastJsonRedisSerializer =  new FastJsonRedisSerializer<>(Object.class);
+    
+        //设置全局
+        ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
+        template.setValueSerializer(fastJsonRedisSerializer);
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());
-        template.setHashValueSerializer(jacksonSerial);
+        template.setHashValueSerializer(fastJsonRedisSerializer);
+        template.setEnableTransactionSupport(true);
         template.afterPropertiesSet();
-
+        
         return template;
     }
 
